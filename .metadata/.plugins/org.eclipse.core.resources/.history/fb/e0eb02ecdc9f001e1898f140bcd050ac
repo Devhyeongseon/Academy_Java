@@ -1,0 +1,29 @@
+package quiz01;
+
+import java.util.Arrays;
+
+//int b = (5 < 4) ? 50 : 40; 
+public class Solution {
+	public int solution(int[] num_list) {
+		int answer = 0;
+		int sum = 0;
+		int sum2 = (int)Math.pow(sum, 2);
+		int x = 1;
+
+		for (int a : num_list) {
+			x *= a;
+			sum += a;
+		}
+
+		return x>sum2 ? 0 : 1;
+	}
+
+	public static void main(String[] args) {
+		Solution S = new Solution();
+		int[] num_list1 = { 3, 4, 5, 2, 1 };
+		int[] num_list2 = { 5, 7, 8, 3 };
+		System.out.println(S.solution(num_list1));
+		System.out.println(S.solution(num_list2));
+	}
+
+}

@@ -1,0 +1,35 @@
+package quiz01;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+
+//int b = (5 < 4) ? 50 : 40; 
+class Solution {
+	public String solution(int[] numLog) {
+		String answer = "";
+		int x = 0;
+		for (int i = 0; i < numLog.length; i++) {
+			x = numLog[i + 1] - numLog[i];
+			if (x == 1) {
+				answer += "w";
+			} else if (x == -1) {
+				answer += "s";
+			} else if (x == 10) {
+				answer += "d";
+			} else if (x == -10) {
+				answer += "a";
+			}
+
+		}
+
+		return answer;
+	}
+
+	public static void main(String[] args) {
+		Solution S = new Solution();
+		int[] numLog = { 0, 1, 0, 10, 0, 1, 0, 10, 0, -1, -2, -1 };
+		System.out.println(answer);
+
+	}
+
+}

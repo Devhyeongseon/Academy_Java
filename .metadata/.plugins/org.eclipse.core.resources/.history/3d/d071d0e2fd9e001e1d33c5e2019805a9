@@ -1,0 +1,76 @@
+package selectex;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+
+public class SelectEx {
+
+	public static void main(String[] args) {
+
+		selectOne();
+	}
+
+	public static void selectOne() {
+
+		String url = "jdbc:oracle:thin:@localhost:1521:xe";
+		String uid = "hr";
+		String upw = "hr";
+
+		String sql = "SELECT * FROM EMPLOYEES WHERE EMPLOYEE_ID >= ?";
+
+		Connection conn = null;
+
+		PreparedStatement pstmt = null;
+
+		ResultSet rs = null;
+
+		try {
+			// 1. JDBC 드라이버 준비
+			Class.forName("oracle.jdbc.driver.OracleDriver");
+
+			// 2. CONN객체 생성
+			conn = DriverManager.getConnection(url, uid, upw);
+
+			// 3. conn 으로부터 statement객체생성 - sql 상태를 지정하기 위한객체
+			pstmt = conn.prepareStatement(sql);
+			// ? 에 개수에 맞추어 값을 채웁니다.
+			pstmt.setString(1, "120");
+
+			// 5. 실행
+			rs = pstmt.executeQuery();
+
+			while (rs.next()) {
+
+				int emp_id = rs.getInt("EMPLOYEE_ID");
+				String first_name = rs.getString("FIRST_NAME");
+				String phone_number = rs.getString("PHONE_NUMBER");
+				String hire_date = rs.getString("HIRE_DATE");
+				int salary = rs.getInt("SALARY");
+
+				System.out.println(emp_id);
+				System.out.println(first_name);
+				System.out.println(phone_number);
+				System.out.println(hire_date);
+				System.out.println(salary);
+
+			}
+
+		} catch (Exception e) {
+			e.printStackTrace();
+
+		} finally {
+			try {
+				conn.close();
+				pstmt.close();
+				rs.close();
+
+			} catch (Exception e2) {
+				// TODO: handle exception
+			}
+
+		}
+
+	}
+}

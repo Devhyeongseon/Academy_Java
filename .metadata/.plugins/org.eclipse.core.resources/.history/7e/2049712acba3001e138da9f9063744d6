@@ -1,0 +1,18 @@
+package quiz01;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+
+class Solution {
+	public int[] solution(int[] arr, int[][] queries) {
+		int[] answer = {};
+		return answer;
+	}
+
+	public static void main(String[] args) {
+		Solution S = new Solution();
+		int[] numLog = { 0, 1, 0, 10, 0, 1, 0, 10, 0, -1, -2, -1 };
+
+	}
+
+}

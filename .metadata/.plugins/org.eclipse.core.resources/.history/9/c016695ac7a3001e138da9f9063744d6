@@ -1,0 +1,31 @@
+package quiz01;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+
+//int b = (5 < 4) ? 50 : 40; 
+class Solution {
+	public int solution(int n, String control) {
+		int answer = 0;
+		for ( char x : control.toCharArray()) {
+			if (x == 'w') {
+				answer += 1;
+				
+			}
+			
+		}
+		
+		
+		
+		return answer;
+	}
+
+	public static void main(String[] args) {
+		Solution S = new Solution();
+		String control = "wsdawsdassw";
+		int n = 0;
+		
+		System.out.println(S.solution(n, control));
+	}
+
+}

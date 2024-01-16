@@ -1,0 +1,30 @@
+package selectex;
+
+public class SelectEx {
+
+	public static void main(String[] args) {
+
+		
+	}
+
+	public static void selectOne() {
+		
+		String url = "jdbc:oracle:thin:@localhost:1521:xejdbc:oracle:thin:@localhost:1521:xejdbc:oracle:thin:@localhost:1521:xe";
+		String uid = "hr";
+		String upw = "hr";
+		
+		
+		try {
+			
+			Class.forName("oracle.jdbc.driver.OracleDriver");
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+			
+		} finally {
+			
+			
+		}
+		
+	}
+}

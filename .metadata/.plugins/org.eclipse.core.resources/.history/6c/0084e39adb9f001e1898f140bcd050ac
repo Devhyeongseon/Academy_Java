@@ -1,0 +1,17 @@
+package quiz01;
+
+import java.util.Arrays;
+
+//int b = (5 < 4) ? 50 : 40; 
+public class Solution {
+	public int solution(int[] num_list) {
+		int answer = 0;
+		return answer;
+	}
+
+	public static void main(String[] args) {
+		Solution S = new Solution();
+
+	}
+
+}
